@@ -27,6 +27,7 @@
 {{- if (and $.IsHome (eq $paginator.PageNumber 1) (eq $index 0)) }}
 {{- if .Site.Params.homeInfoParams | or .Site.Params.disableSpecial1stPost}}
 {{- partial "home_info.html" . }}
+
 <h2>Lo último</h2>
 <br>
 {{- else}}
