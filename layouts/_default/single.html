@@ -69,6 +69,10 @@
   <div class="post-content">
     {{- partial "anchored_headings.html" .Content -}}
   </div>
+  {{- if not (.Param "hideSubscribe")}}
+  <div id='mc_embed_signup_label'>💌 Recibe los artículos en tu correo</div>
+  {{ partial "subscribe.html" . }}
+  {{- end}}
   <footer class="post-footer">
     {{- if .Params.tags }}
     <ul class="post-tags">
