@@ -6,7 +6,7 @@
 
 {{- if not .IsHome | and .Title }}
 <header class="page-header">
-  <h1>{{ .Title }}</h1>
+  <h1> {{ .Title }} </h1>
   {{- if .Description }}
   <div class="post-description">
     {{ .Description }}
@@ -14,21 +14,21 @@
   {{- end }}
 </header>
 {{- end }}
-
 {{- $pages := union .RegularPages .Sections }}
 
 {{- if .IsHome }}
-{{- $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
+{{- $pages = where site.RegularPages "Type" "in" "\\posts\\" }}
 {{- end}}
 
 {{ $paginator := .Paginate $pages }}
 {{ $term := .Data.Term}}
 {{- range $index, $page := $paginator.Pages }}
-
 {{- $class := "post-entry" }}
 {{- if (and $.IsHome (eq $paginator.PageNumber 1) (eq $index 0)) }}
 {{- if .Site.Params.homeInfoParams | or .Site.Params.disableSpecial1stPost}}
 {{- partial "home_info.html" . }}
+<h2>Lo último</h2>
+<br>
 {{- else}}
 {{- $class = "first-entry" }}
 {{- end }}
@@ -39,10 +39,10 @@
   {{- $isHidden := (.Site.Params.cover.hidden | default .Site.Params.cover.hiddenInList)}}
   {{- partial "cover.html" (dict "cxt" . "IsHome" true "isHidden" $isHidden) }}
   <header class="entry-header">
-    <h2>
+    <h3>
       {{ .Title }}
       {{- if .Draft }}<div class="entry-isdraft"><sup>&nbsp;&nbsp;[draft]</sup></div>{{- end }}
-    </h2>
+    </h3>
   </header>
   {{- if (ne .Site.Params.hideSummary true)}}
   <section class="entry-content">
