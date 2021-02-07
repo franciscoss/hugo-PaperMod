@@ -110,6 +110,9 @@
   {{- if (.Param "comments") }}
   {{- partial "comments.html" . }}
   {{- end }}
+
+  {{ partial "staticman.html" . }}
+  
 </article>
 
 {{- end  }}{{/* end main */}}
