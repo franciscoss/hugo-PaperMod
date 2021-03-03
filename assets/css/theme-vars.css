@@ -18,12 +18,24 @@
 }
 
 .dark {
-    --theme: #1d1e20;
+    --theme: #1A202C; 
+    --entry: #2B303F;
+    --primary: rgba(255, 255, 255, 0.84);
+    --secondary: rgba(255, 255, 255, 0.56);
+    --tertiary: rgba(255, 255, 255, 0.16);
+    --content: rgba(255, 255, 255, 0.692);
+    --hljs-bg: #2B303F;
+    --code-bg: #343A4a; 
+    --border: #313441;
+}
+
+.dark-original {
+    --theme: #1d1e20; 
     --entry: #2e2e33;
     --primary: rgba(255, 255, 255, 0.84);
     --secondary: rgba(255, 255, 255, 0.56);
     --tertiary: rgba(255, 255, 255, 0.16);
-    --content: rgba(255, 255, 255, 0.74);
+    --content: rgba(255, 255, 255, 0.692);
     --hljs-bg: #2e2e33;
     --code-bg: #37383e;
     --border: #333;
