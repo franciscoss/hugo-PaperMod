@@ -13,13 +13,19 @@
   </div>
   {{- end }}
 </header>
+<div class="post-content">
+  {{ .Content }}
+</div>
+  {{- if (.Param "libresIndex") }}
+    {{ partial "subscribe.html" . }}
+    <br>
+  {{- end }}
 {{- end }}
-{{- $pages := union .RegularPages .Sections }}
 
+{{- $pages := union .RegularPages .Sections }}
 {{- if .IsHome }}
 {{- $pages = where site.RegularPages "Type" "in" "\\posts\\" }}
 {{- end}}
-
 {{ $paginator := .Paginate $pages }}
 {{ $term := .Data.Term}}
 {{- range $index, $page := $paginator.Pages }}
@@ -28,7 +34,7 @@
 {{- if .Site.Params.homeInfoParams | or .Site.Params.disableSpecial1stPost}}
 {{- partial "home_info.html" . }}
 
-<h2>Lo último</h2>
+<h2>⭐ Artículos destacados </h2>
 <br>
 {{- else}}
 {{- $class = "first-entry" }}

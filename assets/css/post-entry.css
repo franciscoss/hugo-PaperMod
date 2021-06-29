@@ -30,7 +30,8 @@
 }
 
 .home-info .entry-content {
-    -webkit-line-clamp: unset
+    -webkit-line-clamp: unset;
+    font-size: 18px
 }
 
 .post-entry {
